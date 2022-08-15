@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Comment</title>
+</head>
+
+<body>
+    <h1>Please add your comment</h1>
+    <div id="addNewComment">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, aliquam.</p>
+        <p>Suscipit provident illo amet eos saepe deserunt voluptatem quasi ea?</p>
+        <p>Cum itaque necessitatibus, accusantium voluptates magni amet quos iusto voluptas.</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+        <br>
+        <button id="postComment">Post your comment</button>
+    </div>
+    <script>
+        // step 1 add event lintener to the post button
+        document.getElementById('postComment').addEventListener('click', function () {
+            // step 2 get the comment inside the text area
+            const getComment = document.getElementById('new-comment')
+            const newComment = getComment.value;
+            // step 3 
+            const commentBox = document.getElementById('addNewComment');
+            const p = document.createElement('h3');
+            p.innerText = newComment;
+            commentBox.appendChild(p);
+            // step 4 clear the comment area
+            getComment.value = '';
+        })
+    </script>
+</body>
+
+</html>

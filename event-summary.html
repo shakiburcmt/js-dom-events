@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Summary</title>
+</head>
+
+<body>
+    <p id="p">Default Input Text</p>
+    <input id="input" type="text">
+    <button id="update">Update</button>
+
+    <h1 id="last">Final DOM Event Handlers</h1>
+    <button onclick="handleOnClick()">Event by Onclick Function</button>
+    <br>
+    <button id="listener" style="margin-top: 10px;">Event by addEventListener</button>
+    <script>
+        // final option 1
+        function handleOnClick() {
+            const status = document.getElementById('last');
+            status.innerText = 'kiser final choltei thakbe';
+        }
+        // final option 2
+        document.getElementById('listener').addEventListener('click', function () {
+            const status = document.getElementById('last');
+            status.innerText = 'cholbe na, tui chola dekhi!';
+        })
+
+        // button update
+        document.getElementById('update').addEventListener('click', function () {
+            const inputField = document.getElementById('input');
+            const inputText = inputField.value;
+            const p = document.getElementById('p');
+            p.innerText = inputText;
+            inputField.value = '';
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Comment</title>
+</head>
+
+<body>
+    <h1>Practice makes a man perfect</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, dolorum.</p>
+        <p>Reprehenderit at earum, odio excepturi consequuntur quidem rem commodi exercitationem.</p>
+        <p>Ducimus, molestiae non saepe officia voluptatum dolorum nesciunt rem minus.</p>
+    </div>
+    <div>
+        <textarea name="" id="commentBox" cols="60" rows="10"></textarea>
+        <br>
+        <button id="afterClick">Post</button>
+    </div>
+    <script>
+        document.getElementById('afterClick').addEventListener('click', function () {
+            const getComment = document.getElementById('commentBox');
+            const comment = getComment.value;
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = comment;
+            commentContainer.appendChild(p);
+            getComment.value = '';
+        })
+    </script>
+</body>
+
+</html>
