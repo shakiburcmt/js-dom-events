@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary: Event Handler</title>
+</head>
+
+<body>
+    <h1>Explore event handler summary</h1>
+    <button onclick=makeYellow()>make yellow</button>
+    <button id="makeGreen">make red</button>
+    <input id="get-mail" type="email">
+    <script>
+        function makeYellow() {
+            document.body.style.backgroundColor = 'yellow';
+        }
+        document.getElementById('makeGreen').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'green';
+
+        })
+
+        document.getElementById('get-mail').addEventListener('keyup', function (event) {
+            console.log(event.target.value);
+        })
+    </script>
+</body>
+
+</html>
